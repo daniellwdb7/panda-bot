@@ -83,6 +83,12 @@ bot.on("message", async message => {
 
 		return message.channel.send(botembed);
 	}	
+	
+var http = require("http");
+setInterval(function() {
+    http.get("http://panda-botapp.herokuapp.com");
+}, 300000);
+	
 });
 
 bot.login(process.env.BOT_TOKEN);
