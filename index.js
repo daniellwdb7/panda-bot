@@ -73,6 +73,17 @@ bot.on("message", async message => {
 
 		return message.channel.send(botembed);
 	}
+	
+	if(cmd === `Nick`){
+
+		let bicon = bot.user.displayAvatarURL;
+		let botembed = new Discord.RichEmbed()
+		.setColor("#5856D6")
+		.setThumbnail(bicon)
+		.addField("Wie is Nick?", "Nick moet een ban krijgen!")
+
+		return message.channel.send(botembed);
+	}	
 
 	if(cmd === `${prefix}commands`){
 
