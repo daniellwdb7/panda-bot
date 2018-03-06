@@ -106,7 +106,7 @@ module.exports.help = {
 
 		let botembed = new Discord.RichEmbed()
 		.setColor("#5856D6")
-		.addField("HALLO JULLIE WORDEN GEROEPEN!", `${message.author}`, "probeert jullie te bereiken")
+		.addField("HALLO JULLIE WORDEN GEROEPEN!", "Zie bovenstaande bericht.")
 
 		return message.channel.send(botembed);
 	}	
