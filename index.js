@@ -106,7 +106,6 @@ module.exports.help = {
 
 		let botembed = new Discord.RichEmbed()
 		.setColor("#5856D6")
-		.setThumbnail(bicon)
 		.addField("HALLO JULLIE WORDEN GEROEPEN!", "Oproep geplaatst door: ${message.author}")
 
 		return message.channel.send(botembed);
