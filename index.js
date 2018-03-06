@@ -104,11 +104,10 @@ module.exports.help = {
 	}
 	if(cmd === `@everyone`){
 
-		let bicon = bot.user.displayAvatarURL;
 		let botembed = new Discord.RichEmbed()
 		.setColor("#5856D6")
 		.setThumbnail(bicon)
-		.addField("HALLO JULLIE WORDEN GEROEPEN!")
+		.addField("HALLO JULLIE WORDEN GEROEPEN!", "")
 
 		return message.channel.send(botembed);
 	}	
