@@ -6,126 +6,101 @@ bot.commands = new Discord.Collection();
 
 fs.readdir("./commands/", (err, files) => {
 
-	if(err) console.log(err);
+if(err) console.log(err);
 
-	let jsfile = files.filter(f => f.split(".").pop() === "js")
-	if(jsfile.length <= 0){
-		console.log("Geen commando's gevonden");
-		return;
-	}
+let jsfile = files.filter(f => f.split(".").pop() === "js")
+if(jsfile.length <= 0){
+console.log("Geen commando's gevonden");
+return;
+}
 
-	jsfile.forEach((f, i) => {
-		let props = require(`./commands/${f}`);
-		console.log(`${f} geladen!`);
-		bot.commands.set(props.help.name, props);
-	});
+jsfile.forEach((f, i) => {
+let props = require(`./commands/${f}`);
+console.log(`${f} geladen!`);
+bot.commands.set(props.help.name, props);
+});
 });
 
 bot.on("ready", async () => {
-	console.log(`${bot.user.username} is online!`);
-	bot.user.setActivity("Never say no to Panda!", {type: "WATCHING"});
+console.log(`${bot.user.username} is online!`);
+bot.user.setActivity("Never say no to Panda!", {type: "WATCHING"});
 });
 
 bot.on("message", async message => {
-	if(message.author.bot) return;
-	if(message.channel.type === "dm") return;
+if(message.author.bot) return;
+if(message.channel.type === "dm") return;
 
-	let prefix = botconfig.prefix;
-	let messageArray = message.content.split(" ");
-	let cmd = messageArray[0];
-	let args = messageArray.slice(1);
+let prefix = botconfig.prefix;
+let messageArray = message.content.split(" ");
+let cmd = messageArray[0];
+let args = messageArray.slice(1);
 
-	let commandfile = bot.commands.get(cmd.slice(prefix.length));
-	if(commandfile) commandfile.run(bot,message,args);
-
-	// if(cmd === `${prefix}report`){
-	// 	let rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-	// 	if(!rUser) return message.channel.send("Persoon niet gevonden.");
-	// 	let reason = args.join(" ").slice(22);
-
-	// 	let reportEmbed = new Discord.RichEmbed()
-	// 	.setDescription("Afwezig gemeld:")
-	// 	.setColor("#5856D6")
-	// 	.addField("Naam:", `${rUser}`)
-	// 	.addField("Afwezig gemeld door:", `${message.author}`)
-	// 	.addField("In kanaal:", message.channel)
-	// 	.addField("Wat er bekend is:", reason);
-
-	// 	let afwezigheidstopic = message.guild.channels.find(`name`, "afwezigheidstopic");
-	// 	if(!afwezigheidstopic) return message.channel.send("Afwezigheidstopic niet gevonden.");
-
-	// 	message.delete().catch(O_o=>{});
-	// 	afwezigheidstopic.send(reportEmbed);
-
-	// 	return;
-	// }
+let commandfile = bot.commands.get(cmd.slice(prefix.length));
+if(commandfile) commandfile.run(bot,message,args);
 
 module.exports.run = async (bot, message, args) => {
 
-  if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("No.");
-  if(!args[0]) return message.channel.send("no");
-  message.channel.bulkDelete(args[0]).then(() => {
-  message.channel.send(`Clear ${args[0]} messages.`).then(msg => msg.delete(2000));
+if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("No.");
+if(!args[0]) return message.channel.send("no");
+message.channel.bulkDelete(args[0]).then(() => {
+message.channel.send(`Clear ${args[0]} messages.`).then(msg => msg.delete(2000));
 });
 
 }
 
 module.exports.help = {
-  name: "clear"
+name: "clear"
 }
 
 module.exports.help = {
-  name: "clear"
+name: "clear"
 }	
 
-	if(cmd === `${prefix}botinfo`){
+if(cmd === `${prefix}botinfo`){
 
-		let bicon = bot.user.displayAvatarURL;
-		let botembed = new Discord.RichEmbed()
-		.setDescription("Bot Info")
-		.setColor("#5856D6")
-		.setThumbnail(bicon)
-		.addField("Eigenaar:", "Daniell")
-		.addField("Naam:", bot.user.username)
-		.addField("Gemaakt op:", bot.user.createdAt);
+let bicon = bot.user.displayAvatarURL;
+let botembed = new Discord.RichEmbed()
+.setDescription("Bot Info")
+.setColor("#5856D6")
+.setThumbnail(bicon)
+.addField("Eigenaar:", "Daniell")
+.addField("Naam:", bot.user.username)
+.addField("Gemaakt op:", bot.user.createdAt);
 
-		return message.channel.send(botembed);
-	}
-	
-	if(cmd === `Nick`){
+return message.channel.send(botembed);
+}
 
-		let bicon = bot.user.displayAvatarURL;
-		let botembed = new Discord.RichEmbed()
-		.setColor("#5856D6")
-		.setThumbnail(bicon)
-		.addField("Wie is Nick?", "Nick moet een ban krijgen!")
+if(cmd === `Nick`){
 
-		return message.channel.send(botembed);
-	}
-	if(cmd === `@everyone`){
+let bicon = bot.user.displayAvatarURL;
+let botembed = new Discord.RichEmbed()
+.setColor("#5856D6")
+.setThumbnail(bicon)
+.addField("Wie is Nick?", "Nick moet een ban krijgen!")
 
-		let botembed = new Discord.RichEmbed()
-		.setColor("#5856D6")
-		.addField("HALLO JULLIE WORDEN GEROEPEN!", "Zie bovenstaande bericht.")
+return message.channel.send(botembed);
+}
+if(cmd === `Gido`){
 
-		return message.channel.send(botembed);
-	}	
+let bicon = bot.user.displayAvatarURL;
+let botembed = new Discord.RichEmbed()
+.setColor("#5856D6")
+.setThumbnail(bicon)
+.addField("Wie is Gido?", "Gido moet een ban krijgen!")
 
-	if(cmd === `${prefix}commands`){
+return message.channel.send(botembed);
+}		return message.channel.send(botembed);
+}	
 
-		let botembed = new Discord.RichEmbed()
-		.setDescription("Beschikbare commando's")
-		.setColor("#5856D6")
-		.addField("Afwezig melden:", "```!report @gebruiker reden en datum```")
+if(cmd === `${prefix}commands`){
 
-		return message.channel.send(botembed);
-	}	
-	
-var http = require("http");
-setInterval(function() {
-    http.get("http://panda-botapp.herokuapp.com");
-}, 300000);
-	
+let botembed = new Discord.RichEmbed()
+.setDescription("Beschikbare commando's")
+.setColor("#5856D6")
+.addField("Afwezig melden:", "```!report @gebruiker reden en datum```")
+
+return message.channel.send(botembed);
+}	
 });
 
 bot.login(process.env.BOT_TOKEN);
