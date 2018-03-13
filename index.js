@@ -80,6 +80,7 @@ let botembed = new Discord.RichEmbed()
 
 return message.channel.send(botembed);
 }
+
 if(cmd === `Gido`){
 
 let bicon = bot.user.displayAvatarURL;
@@ -89,8 +90,7 @@ let botembed = new Discord.RichEmbed()
 .addField("Wie is Gido?", "Gido moet een ban krijgen!")
 
 return message.channel.send(botembed);
-}		return message.channel.send(botembed);
-}	
+}
 
 if(cmd === `${prefix}commands`){
 
