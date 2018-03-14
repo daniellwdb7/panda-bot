@@ -100,6 +100,15 @@ let botembed = new Discord.RichEmbed()
 
 return message.channel.send(botembed);
 }	  
+
+if(cmd === `${prefix}dealer`){
+
+let botembed = new Discord.RichEmbed()
+.setColor("#5856D6")
+.addField("Wil jij ons jaloers maken?", "Hier kan je dealers melden die je hebt aangenomen!")
+
+return message.channel.send(botembed);
+}	  
   
 if(cmd === `${prefix}commands`){
 
