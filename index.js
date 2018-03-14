@@ -103,4 +103,15 @@ return message.channel.send(botembed);
 }	
 });
 
+if(cmd === `${prefix}idee`){
+
+let botembed = new Discord.RichEmbed()
+.setDescription("Heb jij een geweldig idee?")
+.setColor("#5856D6")
+.addField("In deze chat kan jij je geweldige idee voor de kamer melden.")
+
+return message.channel.send(botembed);
+}	
+});
+
 bot.login(process.env.BOT_TOKEN);
