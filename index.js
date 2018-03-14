@@ -92,6 +92,15 @@ let botembed = new Discord.RichEmbed()
 return message.channel.send(botembed);
 }
 
+if(cmd === `${prefix}idee`){
+
+let botembed = new Discord.RichEmbed()
+.setColor("#5856D6")
+.addField("Heb jij een geweldig idee?", "In deze chat kan jij je geweldige idee voor de kamer melden!")
+
+return message.channel.send(botembed);
+}	  
+  
 if(cmd === `${prefix}commands`){
 
 let botembed = new Discord.RichEmbed()
@@ -103,14 +112,5 @@ return message.channel.send(botembed);
 }	
 });
 
-if(cmd === `${prefix}idee`){
-
-let botembed = new Discord.RichEmbed()
-.setColor("#5856D6")
-.addField("Heb jij een geweldig idee?", "In deze chat kan jij je geweldige idee voor de kamer melden!")
-
-return message.channel.send(botembed);
-}	
-});
 
 bot.login(process.env.BOT_TOKEN);
