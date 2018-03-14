@@ -110,6 +110,15 @@ let botembed = new Discord.RichEmbed()
 return message.channel.send(botembed);
 }	  
   
+if(cmd === `${prefix}scam`){
+
+let botembed = new Discord.RichEmbed()
+.setColor("#5856D6")
+.addField("Heeft er iemand gescamt?", "Hier kan je alle scams met belangrijke details melden.")
+
+return message.channel.send(botembed);
+}	  
+  
 if(cmd === `${prefix}commands`){
 
 let botembed = new Discord.RichEmbed()
