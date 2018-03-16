@@ -23,7 +23,7 @@ bot.commands.set(props.help.name, props);
 
 bot.on("ready", async () => {
 console.log(`${bot.user.username} is online!`);
-bot.user.setActivity("Never say no to Panda!", {type: "WATCHING"});
+bot.user.setActivity("Porn", {type: "WATCHING"});
 });
 
 bot.on("message", async message => {
