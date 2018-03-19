@@ -41,7 +41,7 @@ bot.on('message', function(message) {
             // use the message's channel (TextChannel) to send a new message
             message.channel.send("123")
             .catch(console.error); // add error handling here
-        }, 1 * 500); 
+        }, 1 * 60000); 
     }
 });
 // End test
