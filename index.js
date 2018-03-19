@@ -29,7 +29,19 @@ bot.user.setActivity("Porn", {type: "WATCHING"});
 bot.on("message", async message => {
 if(message.author.bot) return;
 if(message.channel.type === "dm") return;
+// Test
+bot.on('ready', function() {
+    console.log(bot.user.username);
+});
 
+bot.on('message', function() {
+    if (message.content === "$loop") { 
+      var interval = setInterval (function () {
+        message.channel.send("Ik test of ik wakker kan blijven")
+      }, 1 * 2000); 
+    }
+});  
+// End test
 let prefix = botconfig.prefix;
 let messageArray = message.content.split(" ");
 let cmd = messageArray[0];
@@ -91,13 +103,6 @@ let botembed = new Discord.RichEmbed()
 
 return message.channel.send(botembed);
 }
-  
-bot.on('message', function() {
-    if (message.content === "$loop") { 
-      var interval = setInterval (function () {
-        message.channel.send("Ik probeer hiermee te kijken of ik wakker kan blijven")
-      }, 1 * 2000); 
-    }  
 
 if(cmd === `${prefix}idee`){
 
