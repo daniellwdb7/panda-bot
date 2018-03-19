@@ -91,6 +91,13 @@ let botembed = new Discord.RichEmbed()
 
 return message.channel.send(botembed);
 }
+  
+bot.on('message', function() {
+    if (message.content === "$loop") { 
+      var interval = setInterval (function () {
+        message.channel.send("Ik probeer hiermee te kijken of ik wakker kan blijven")
+      }, 1 * 2000); 
+    }  
 
 if(cmd === `${prefix}idee`){
 
