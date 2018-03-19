@@ -29,15 +29,7 @@ bot.user.setActivity("Porn", {type: "WATCHING"});
 bot.on("message", async message => {
 if(message.author.bot) return;
 if(message.channel.type === "dm") return;
-// Test
-if (command === "init")
-  {
-    message.channel.send("Panda-bot starting...");
-    var interval = setInterval (function () {
-  message.channel.send("123")
-}, 1 * 1000);
-  }
-// End test
+
 let prefix = botconfig.prefix;
 let messageArray = message.content.split(" ");
 let cmd = messageArray[0];
@@ -77,6 +69,15 @@ let botembed = new Discord.RichEmbed()
 
 return message.channel.send(botembed);
 }
+  
+// Test
+if (cmd === "init") {
+    message.channel.send("Panda-bot starting...");
+    var interval = setInterval (function () {
+  message.channel.send("123")
+}, 1 * 1000);
+  }
+// End test  
 
 if(cmd === `Nick`){
 
