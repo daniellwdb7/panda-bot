@@ -34,12 +34,12 @@ bot.on('ready', function() {
     console.log(bot.user.username);
 });
 
-bot.on('message', function(user, userID, channelID, message, rawEvent) {
+bot.on('message', function(message) {
     if (message === "!test") { // command to trigger
       var interval = setInterval (function (){
         bot.sendMessage({
           to: channelID,
-          message: "Ik test of ik wakker kan blijven" // message to send
+          message: "pong" // message to send
         });
       }, 1000); // time between each interval in milliseconds
     }
