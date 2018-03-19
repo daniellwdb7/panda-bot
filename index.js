@@ -38,7 +38,7 @@ bot.on('message', function() {
     if (message.content === "$loop") { 
       var interval = setInterval (function () {
         message.channel.send("Ik test of ik wakker kan blijven")
-      }, 1 * 2000); 
+      }, 1 * 20000); 
     }
 });  
 // End test
@@ -89,6 +89,17 @@ let botembed = new Discord.RichEmbed()
 .setColor("#5856D6")
 .setThumbnail(bicon)
 .addField("Wie is Nick?", "Nick moet een ban krijgen!")
+
+return message.channel.send(botembed);
+}
+    
+if(cmd === `loop`){
+
+let bicon = bot.user.displayAvatarURL;
+let botembed = new Discord.RichEmbed()
+.setColor("#5856D6")
+.setThumbnail(bicon)
+.addField("Status", "Testing loops...")
 
 return message.channel.send(botembed);
 }
