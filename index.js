@@ -34,13 +34,16 @@ bot.on('ready', function() {
     console.log(bot.user.username);
 });
 
-bot.on('message', function() {
-    if (message.content === "!SetMessageWithInterval") { 
-      var interval = setInterval (function () {
-        message.channel.send("Ik test of ik wakker kan blijven")
-      }, 1 * 60000); 
+bot.on('message', function(419614095478751243, message) {
+    if (message === "!test") { // command to trigger
+      var interval = setInterval (function (){
+        bot.sendMessage({
+          to: 419614095478751243,
+          message: "pong" // message to send
+        });
+      }, 1000); // time between each interval in milliseconds
     }
-}); 
+});
 // End test
 let prefix = botconfig.prefix;
 let messageArray = message.content.split(" ");
