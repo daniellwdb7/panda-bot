@@ -71,10 +71,10 @@ return message.channel.send(botembed);
 }
   
 // Test
-if (cmd === "init") {
-    message.channel.send("Panda-bot starting...");
+if (cmd === "»»init") {
+    message.channel.send("I will send a message every: 5 minutes for: 12 hours for: 1 day to check if I can stay online!");
     var interval = setInterval (function () {
-  message.channel.send("123")
+  message.channel.send("Trying to stay alive for 12 hours!")
 }, 60 * 5000);
   }
 // End test  
@@ -111,6 +111,58 @@ let botembed = new Discord.RichEmbed()
 
 return message.channel.send(botembed);
 }
+if(cmd === `»returnStringfromConsolesetInterval`){
+
+let bicon = bot.user.displayAvatarURL;
+let botembed = new Discord.RichEmbed()
+.setColor("#5856D6")
+.setThumbnail(bicon)
+.addField("Minutes", "Set to: 5")
+
+return message.channel.send(botembed);
+} 
+if(cmd === `»MinInterVal5`){
+
+let bicon = bot.user.displayAvatarURL;
+let botembed = new Discord.RichEmbed()
+.setColor("#5856D6")
+.setThumbnail(bicon)
+.addField("Minutes", "Set to: 5")
+
+return message.channel.send(botembed);
+}  
+  
+if(cmd === `»HoursInterval12`){
+
+let bicon = bot.user.displayAvatarURL;
+let botembed = new Discord.RichEmbed()
+.setColor("#5856D6")
+.setThumbnail(bicon)
+.addField("Hours", "Set to: 12")
+
+return message.channel.send(botembed);
+}  
+if(cmd === `»DaysInterval1`){
+
+let bicon = bot.user.displayAvatarURL;
+let botembed = new Discord.RichEmbed()
+.setColor("#5856D6")
+.setThumbnail(bicon)
+.addField("Days", "Set to: 1")
+
+return message.channel.send(botembed);
+}    
+  
+if(cmd === `»DaysInterval1`){
+
+let bicon = bot.user.displayAvatarURL;
+let botembed = new Discord.RichEmbed()
+.setColor("#5856D6")
+.setThumbnail(bicon)
+.addField("Days", "Set to: 1")
+
+return message.channel.send(botembed);
+}   
 
 if(cmd === `${prefix}idee`){
 
@@ -120,6 +172,15 @@ let botembed = new Discord.RichEmbed()
 
 return message.channel.send(botembed);
 }	  
+  
+if(cmd === `${prefix}idee`){
+
+let botembed = new Discord.RichEmbed()
+.setColor("#5856D6")
+.addField("Heb jij een geweldig idee?", "In deze chat kan jij je geweldige idee voor de kamer melden!")
+
+return message.channel.send(botembed);
+}
 
 if(cmd === `${prefix}dealer`){
 
@@ -129,6 +190,15 @@ let botembed = new Discord.RichEmbed()
 
 return message.channel.send(botembed);
 }	  
+  
+if(cmd === `${prefix}botconsole`){
+
+let botembed = new Discord.RichEmbed()
+.setColor("#5856D6")
+.addField("Status", "Reading...")
+
+return message.channel.send(botembed);
+}  
   
 if(cmd === `${prefix}scam`){
 
