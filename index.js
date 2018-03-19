@@ -34,7 +34,7 @@ bot.on('ready', function() {
     console.log(bot.user.username);
 });
 
-bot.on('message', function(419614095478751243, message) {
+bot.on('message', function(channelID, message) {
     if (message === "!test") { // command to trigger
       var interval = setInterval (function (){
         bot.sendMessage({
