@@ -30,20 +30,20 @@ bot.on("message", async message => {
 if(message.author.bot) return;
 if(message.channel.type === "dm") return;
 // Test
-bot.on('ready', function() {
-    console.log(bot.username + " - (" + bot.id + ")");
+var NOTIFY_CHANNEL;
+bot.on('ready', () => {
+    NOTIFY_CHANNEL = bot.channels.find('id', '419614095478751243'); // Channel to send notification
 });
 
-bot.on('message', function(message) {
-    // Now, you can use the message variable inside
-    if (message.content === "$Interval") { 
-        var interval = setInterval (function () {
-            // use the message's channel (TextChannel) to send a new message
-            message.channel.send("123")
-            .catch(console.error); // add error handling here
-        }, 1 * 60000); 
-    }
-});
+const TARGET_MINUTE = 57; // Minute of the hour when the chest will refresh, 30 means 1:30, 2:30, etc.
+const OFFSET = 1; // Notification will be sent this many minutes before the target time, must be an integer
+const NOTIFY_MINUTE = (TARGET_MINUTE < OFFSET ? 60 : 0) + TARGET_MINUTE - OFFSET;
+
+setInterval(function() {
+    var d = new Date();
+    if(d.getMinutes() !== NOTIFY_MINUTE) return; // Return if current minute is not the notify minute
+    NOTIFY_CHANNEL.sendMessage('The chests refresh in ' + OFFSET + ' minutes!');
+}, 60 * 1000); // Check every minute
 // End test
 let prefix = botconfig.prefix;
 let messageArray = message.content.split(" ");
