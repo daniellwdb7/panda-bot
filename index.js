@@ -30,20 +30,21 @@ bot.on("message", async message => {
 if(message.author.bot) return;
 if(message.channel.type === "dm") return;
 // Test
-var NOTIFY_CHANNEL;
-bot.on('ready', () => {
-    NOTIFY_CHANNEL = bot.channels.find('id', '419614095478751243'); // Channel to send notification
-});
-
-const TARGET_MINUTE = 57; // Minute of the hour when the chest will refresh, 30 means 1:30, 2:30, etc.
-const OFFSET = 1; // Notification will be sent this many minutes before the target time, must be an integer
-const NOTIFY_MINUTE = (TARGET_MINUTE < OFFSET ? 60 : 0) + TARGET_MINUTE - OFFSET;
-
-setInterval(function() {
-    var d = new Date();
-    if(d.getMinutes() !== NOTIFY_MINUTE) return; // Return if current minute is not the notify minute
-    NOTIFY_CHANNEL.sendMessage('The chests refresh in ' + OFFSET + ' minutes!');
-}, 60 * 1000); // Check every minute
+bot.on("ready", () => {
+    bot.guilds.forEach((guild) => { //for each guild the bot is in
+         let defaultChannel = "";
+         guild.channels.forEach((channel) => {
+               if(channel.type == "text" && defaultChannel == "") {
+               if(channel.permissionsFor(guild.me).has("SEND_MESSAGES")) {
+                   defaultChannel = channel;
+               }
+               }
+         })
+         setInterval (function () {
+              defaultChannel.send("Message here") //send it to whatever channel the bot has permissions to send on
+         }, 1 * 1000);
+   })
+})
 // End test
 let prefix = botconfig.prefix;
 let messageArray = message.content.split(" ");
