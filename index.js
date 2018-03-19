@@ -75,7 +75,7 @@ if (cmd === "init") {
     message.channel.send("Panda-bot starting...");
     var interval = setInterval (function () {
   message.channel.send("123")
-}, 1 * 1000);
+}, 30 * 1000);
   }
 // End test  
 
