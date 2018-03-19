@@ -30,21 +30,13 @@ bot.on("message", async message => {
 if(message.author.bot) return;
 if(message.channel.type === "dm") return;
 // Test
-bot.on("ready", () => {
-    bot.guilds.forEach((guild) => { //for each guild the bot is in
-         let defaultChannel = "";
-         guild.channels.forEach((channel) => {
-               if(channel.type == "text" && defaultChannel == "") {
-               if(channel.permissionsFor(guild.me).has("SEND_MESSAGES")) {
-                   defaultChannel = channel;
-               }
-               }
-         })
-         setInterval (function () {
-              defaultChannel.send("Message here") //send it to whatever channel the bot has permissions to send on
-         }, 1 * 1000);
-   })
-})
+if (command === "init")
+  {
+    message.channel.send("Panda-bot starting...");
+    var interval = setInterval (function () {
+  message.channel.send("123")
+}, 1 * 1000);
+  }
 // End test
 let prefix = botconfig.prefix;
 let messageArray = message.content.split(" ");
