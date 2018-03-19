@@ -34,14 +34,14 @@ bot.on('ready', function() {
     console.log(bot.username + " - (" + bot.id + ")");
 });
 
-bot.on('message', function(user, userID, channelID, message, rawEvent) {
-    if (message === "!test") { // command to trigger
-      var interval = setInterval (function (){
-        bot.sendMessage({
-          to: channelID,
-          message: "pong" // message to send
-        });
-      }, 1000); // time between each interval in milliseconds
+bot.on('message', function(message) {
+    // Now, you can use the message variable inside
+    if (message.content === "$Interval") { 
+        var interval = setInterval (function () {
+            // use the message's channel (TextChannel) to send a new message
+            message.channel.send("123")
+            .catch(console.error); // add error handling here
+        }, 1 * 500); 
     }
 });
 // End test
