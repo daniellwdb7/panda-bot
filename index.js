@@ -37,9 +37,7 @@ bot.on('ready', function() {
 bot.on('message', function(message) {
     if (message === "!test") { // command to trigger
       var interval = setInterval (function (){
-        bot.sendMessage({
-          to: afwezigheidstopic,
-          message: "pong" // message to send
+          message.channel.send("Ik test of ik op deze manier wakker kan blijven")
         });
       }, 1000); // time between each interval in milliseconds
     }
