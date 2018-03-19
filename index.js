@@ -69,15 +69,6 @@ let botembed = new Discord.RichEmbed()
 
 return message.channel.send(botembed);
 }
-  
-// Test
-if (cmd === "»»init") {
-    message.channel.send("I will send a message every: 5 minutes for: 12 hours for: 1 day to check if I can stay online!");
-    var interval = setInterval (function () {
-  message.channel.send("Trying to stay alive for 12 hours!")
-}, 60 * 5000);
-  }
-// End test  
 
 if(cmd === `Nick`){
 
@@ -90,13 +81,13 @@ let botembed = new Discord.RichEmbed()
 return message.channel.send(botembed);
 }
     
-if(cmd === `!SetMessageWithInterval`){
+if(cmd === `!console`){
 
 let bicon = bot.user.displayAvatarURL;
 let botembed = new Discord.RichEmbed()
 .setColor("#5856D6")
 .setThumbnail(bicon)
-.addField("Status", "Wakker")
+.addField("Status", "Reading...")
 
 return message.channel.send(botembed);
 }
@@ -132,37 +123,16 @@ let botembed = new Discord.RichEmbed()
 return message.channel.send(botembed);
 }  
   
-if(cmd === `»HoursInterval12`){
+if(cmd === `»Interval=false`){
 
 let bicon = bot.user.displayAvatarURL;
 let botembed = new Discord.RichEmbed()
 .setColor("#5856D6")
 .setThumbnail(bicon)
-.addField("Hours", "Set to: 12")
+.addField("Status", "Message interval is disabled, returning to state: index.js")
 
 return message.channel.send(botembed);
-}  
-if(cmd === `»DaysInterval1`){
-
-let bicon = bot.user.displayAvatarURL;
-let botembed = new Discord.RichEmbed()
-.setColor("#5856D6")
-.setThumbnail(bicon)
-.addField("Days", "Set to: 1")
-
-return message.channel.send(botembed);
-}    
-  
-if(cmd === `»DaysInterval1`){
-
-let bicon = bot.user.displayAvatarURL;
-let botembed = new Discord.RichEmbed()
-.setColor("#5856D6")
-.setThumbnail(bicon)
-.addField("Days", "Set to: 1")
-
-return message.channel.send(botembed);
-}   
+} 
 
 if(cmd === `${prefix}idee`){
 
