@@ -34,12 +34,11 @@ bot.on('ready', function() {
     console.log(bot.user.username);
 });
 
-bot.on('message', function(message) {
-    if (message === "!test") { // command to trigger
-      var interval = setInterval (function (){
-          message.channel.send("Ik test of ik op deze manier wakker kan blijven")
-        });
-      }, 1000); // time between each interval in milliseconds
+bot.on('message', function() {
+    if (message.content === "!SetMessageWithInterval") { 
+      var interval = setInterval (function () {
+        message.channel.send("Ik test of ik wakker kan blijven")
+      }, 1 * 1000); 
     }
 }); 
 // End test
@@ -94,13 +93,13 @@ let botembed = new Discord.RichEmbed()
 return message.channel.send(botembed);
 }
     
-if(cmd === `loop`){
+if(cmd === `!SetMessageWithInterval`){
 
 let bicon = bot.user.displayAvatarURL;
 let botembed = new Discord.RichEmbed()
 .setColor("#5856D6")
 .setThumbnail(bicon)
-.addField("Status", "Testing loops...")
+.addField("Status", "Wakker")
 
 return message.channel.send(botembed);
 }
