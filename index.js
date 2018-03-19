@@ -117,7 +117,7 @@ let bicon = bot.user.displayAvatarURL;
 let botembed = new Discord.RichEmbed()
 .setColor("#5856D6")
 .setThumbnail(bicon)
-.addField("Minutes", "Set to: 5")
+.addField("Console:", "panda-bot is configured! Interval=true")
 
 return message.channel.send(botembed);
 } 
