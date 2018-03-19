@@ -38,7 +38,7 @@ bot.on('message', function() {
     if (message.content === "$loop") { 
       var interval = setInterval (function () {
         message.channel.send("Ik test of ik wakker kan blijven")
-      }, 10000); 
+      }, 1000); 
     }
 });  
 // End test
