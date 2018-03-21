@@ -107,7 +107,7 @@ bot.on("message", async message => {
 		let botembed = new Discord.RichEmbed()
 		.setColor("#5856D6")
 		.setThumbnail(bicon)
-		.addField("Lijst", "Gido moet een ban krijgen! \n Maar niet huis")
+		.addField("Lijst", "Tibby: 12-05\nMitch: 20-01\nKatie: 27-08\nRoel: 11-05\nMathijs: 29-04\nIrena: 27-02\nDesi: 21-06\nJurrian: 31-12\nFloor:15-11\nEmil: 31-05\nJari: 06-03\nJonathan: 10-10\nMaurice: 26-08\nBennie: 23-09\nNina: 15-04\nSven: 23-3\nJesse: 19-12\nNaomi: 22-08\nWassim: 28-9\nDaniël: 12-12")
 
 		return message.channel.send(botembed);		
 	}	
