@@ -69,6 +69,18 @@ let botembed = new Discord.RichEmbed()
 
 return message.channel.send(botembed);
 }
+    
+if(cmd === `${prefix}verjaardagen`){
+
+let bicon = bot.user.displayAvatarURL;
+let botembed = new Discord.RichEmbed()
+.setDescription("CHECKING...")
+.setColor("#5856D6")
+.setThumbnail(bicon)
+.addField("Verjaardagen:", "Tibby: 12-05", "Mitch: 20-01")
+
+return message.channel.send(botembed);
+}
 
 if(cmd === `Nick`){
 
