@@ -106,7 +106,7 @@ if(cmd === `${prefix}verjaardagen`){
 
 let botembed = new Discord.RichEmbed()
 .setColor("#5856D6")
-.addField("Verjaardagen:", "Tibby: 12-05, Mitch: 20-01")
+.addField("Verjaardagen:", "Tibby: 12-05 \n Mitch: 20-01")
 
 return message.channel.send(botembed);
 }	
