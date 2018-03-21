@@ -91,7 +91,7 @@ bot.on("message", async message => {
 
 		return message.channel.send(botembed);
 	}  	    
-	
+
 	if(cmd === `${prefix}commands`){
 
 		let botembed = new Discord.RichEmbed()
@@ -103,12 +103,13 @@ bot.on("message", async message => {
 	}	
 
 	if(cmd === `${prefix}verjaardagen`){
+		let bicon = bot.user.displayAvatarURL;
+		let botembed = new Discord.RichEmbed()
+		.setColor("#5856D6")
+		.setThumbnail(bicon)
+		.addField("Lijst", "Gido moet een ban krijgen! \n Maar niet huis")
 
-		bot.sendMessage(msg.channel, "Online users:");
-		bot.sendMessage(msg.channel, "user 1");
-		bot.sendMessage(msg.channel, "user 2:");
-
-		return message.channel.send(botembed);
+		return message.channel.send(botembed);		
 	}	
 
 });
