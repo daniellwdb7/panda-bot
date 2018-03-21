@@ -24,7 +24,7 @@ bot.commands.set(props.help.name, props);
 
 bot.on("ready", async () => {
 console.log(`${bot.user.username} is online!`);
-bot.user.setActivity("Porn", {type: "WATCHING"});
+bot.user.setActivity("Golden Palace", {type: "WATCHING"});
 });
 
 bot.on("message", async message => {
@@ -70,18 +70,6 @@ let botembed = new Discord.RichEmbed()
 
 return message.channel.send(botembed);
 }
-    
-if(cmd === `${prefix}verjaardagen`){
-
-let bicon = bot.user.displayAvatarURL;
-let botembed = new Discord.RichEmbed()
-.setDescription("CHECKING...")
-.setColor("#5856D6")
-.setThumbnail(bicon)
-.addField("Verjaardagen:", "Tibby: 12-05" "Mitch: 20-01")
-
-return message.channel.send(botembed);
-}
 
 if(cmd === `Nick`){
 
@@ -90,17 +78,6 @@ let botembed = new Discord.RichEmbed()
 .setColor("#5856D6")
 .setThumbnail(bicon)
 .addField("Wie is Nick?", "Nick moet een ban krijgen!")
-
-return message.channel.send(botembed);
-}
-    
-if(cmd === `!console`){
-
-let bicon = bot.user.displayAvatarURL;
-let botembed = new Discord.RichEmbed()
-.setColor("#5856D6")
-.setThumbnail(bicon)
-.addField("Status", "Reading...")
 
 return message.channel.send(botembed);
 }
@@ -114,83 +91,7 @@ let botembed = new Discord.RichEmbed()
 .addField("Wie is Gido?", "Gido moet een ban krijgen!")
 
 return message.channel.send(botembed);
-}
-if(cmd === `»returnStringfromConsolesetInterval`){
-
-let bicon = bot.user.displayAvatarURL;
-let botembed = new Discord.RichEmbed()
-.setColor("#5856D6")
-.setThumbnail(bicon)
-.addField("Console:", "panda-bot is configured! Interval=true")
-
-return message.channel.send(botembed);
-} 
-if(cmd === `»MinInterVal5`){
-
-let bicon = bot.user.displayAvatarURL;
-let botembed = new Discord.RichEmbed()
-.setColor("#5856D6")
-.setThumbnail(bicon)
-.addField("Minutes", "Set to: 5")
-
-return message.channel.send(botembed);
-}  
-  
-if(cmd === `»Interval=false`){
-
-let bicon = bot.user.displayAvatarURL;
-let botembed = new Discord.RichEmbed()
-.setColor("#5856D6")
-.setThumbnail(bicon)
-.addField("Status", "Message interval is disabled, returning to state: index.js")
-
-return message.channel.send(botembed);
-} 
-
-if(cmd === `${prefix}idee`){
-
-let botembed = new Discord.RichEmbed()
-.setColor("#5856D6")
-.addField("Heb jij een geweldig idee?", "In deze chat kan jij je geweldige idee voor de kamer melden!")
-
-return message.channel.send(botembed);
-}	  
-  
-if(cmd === `${prefix}idee`){
-
-let botembed = new Discord.RichEmbed()
-.setColor("#5856D6")
-.addField("Heb jij een geweldig idee?", "In deze chat kan jij je geweldige idee voor de kamer melden!")
-
-return message.channel.send(botembed);
-}
-
-if(cmd === `${prefix}dealer`){
-
-let botembed = new Discord.RichEmbed()
-.setColor("#5856D6")
-.addField("Wil jij ons jaloers maken?", "Hier kan je dealers melden die je hebt aangenomen!")
-
-return message.channel.send(botembed);
-}	  
-  
-if(cmd === `${prefix}botconsole`){
-
-let botembed = new Discord.RichEmbed()
-.setColor("#5856D6")
-.addField("Status", "Reading...")
-
-return message.channel.send(botembed);
-}  
-  
-if(cmd === `${prefix}scam`){
-
-let botembed = new Discord.RichEmbed()
-.setColor("#5856D6")
-.addField("Heeft er iemand gescamt?", "Hier kan je alle scams met belangrijke details melden.")
-
-return message.channel.send(botembed);
-}	  
+}  	    
   
 if(cmd === `${prefix}commands`){
 
